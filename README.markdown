@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/walkamongus/sssd.svg)](https://travis-ci.org/walkamongus/sssd)
 
-####Table of Contents
+#### Table of Contents
 
 1. [Overview](#overview)
 2. [Module Description - What the module does and why it is useful](#module-description)
@@ -14,11 +14,11 @@
 5. [Reference - An under-the-hood peek at what the module is doing and how](#reference)
 5. [Limitations - OS compatibility, etc.](#limitations)
 
-##Overview
+## Overview
 
 This module installs (if necessary) and configures the System Security Services Daemon. 
 
-##Module Description
+## Module Description
 
 The System Security Services Daemon bridges the gap between local authentication requests 
 and remote authentication providers.  This module installs the required sssd packages and 
@@ -30,9 +30,9 @@ be enabled or disabled (defaults to disabled).
 
 For SSH and Sudo integration with SSSD, this module works well with [saz/ssh](https://forge.puppetlabs.com/saz/ssh) and [trlinkin/nsswitch](https://forge.puppetlabs.com/trlinkin/nsswitch).
 
-##Setup
+## Setup
 
-###What sssd affects
+### What sssd affects
 
 * Packages
     * sssd
@@ -47,13 +47,13 @@ For SSH and Sudo integration with SSSD, this module works well with [saz/ssh](ht
 * Execs
     * the authconfig command is run to enable or disable the PAM mkhomedir.so functionality
 
-###Beginning with sssd
+### Beginning with sssd
 
 Install SSSD with a bare default config file:
 
      class {'::sssd': }
 
-##Usage
+## Usage
 
 Install SSSD with custom configuration:
 
@@ -73,9 +73,9 @@ Install SSSD with custom configuration:
     }
 
 
-##Reference
+## Reference
 
-###Parameters
+### Parameters
 
 * `mkhomedir`: Defaults to 'disabled'.  Set to 'enabled' to enable auto-creation of home directories on user login
 * `use_legacy_packages`: Boolean. Defaults to false.  Set to true to install the legacy 'libsss_sudo
@@ -119,7 +119,7 @@ Will be represented in sssd.conf like this:
     [domain/LDAP]
     key2 = value2
 
-###Classes
+### Classes
 
 * sssd::params
 * sssd::init
